@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-security-training-local"
+version = "0.1.0"
+description = "Local-only secure coding training repo (non-deployable training materials)."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Local Training" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "ruff>=0.6.0",
+  "bandit>=1.7.9",
+  "pip-audit>=2.7.3",
+  "semgrep>=1.70.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
