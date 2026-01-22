@@ -1,0 +1,10 @@
+rules:
+  - id: training.vuln-marker
+    message: "Training finding marker: $VULN_ID"
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      training: true
+    patterns:
+      - pattern: TRAINING_VULN($VULN_ID)
